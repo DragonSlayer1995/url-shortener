@@ -24,11 +24,9 @@ func main() {
 
 	storage, err := sqlite.New(cfg.StoragePath)
 	if err != nil {
-		log.Error("failed to init storage", err)
 		log.Error("failed to init storage", sl.Err(err))
 		os.Exit(1)
 	}
-
 	_ = storage
 
 	// TODO: init router: chi, "chi render"
